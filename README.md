@@ -30,10 +30,12 @@ The design models a highly resilient, multi-tiered enterprise architecture tailo
 │   ├── Missions.pdf   # My missions during the internship design doc
 │   └── Internship_Technical_Report.pdf     # Summary of objectives, methodologies & findings
 ├── Network Topology/
-│   ├── sebn_main_plant_topology.pkt        # Packet Tracer master project file
+│   ├── sebn_main_plant_topology.pkt        # Packet Tracer master project files
 │   └── physical_layout_map.png             # Visual map of physical machines placements (MAO/WAO/CAO)
+│   └── backup_process.png                  # How SEBN-MA handles it's backup schedules
 └── Cisco Toolbox/
     └── core_switch_configuration.pdf       # Cisco IOS commands used
+```
 
 ---
 
