@@ -1,4 +1,4 @@
-# Global Net Infra: SEBN-MA Network Architecture
+# SEBN-MA Corporation Network Infrastructure & Architecture:
 
 A comprehensive documentation and implementation repository detailing the industrial network infrastructure of the SEBN-MA manufacturing plant in Tangier, Morocco. This project was compiled during a professional engineering internship within the Information Technology department.
 
