@@ -17,7 +17,7 @@ The focus is on balancing reliable real-time data flow for manufacturing executi
 The design models a highly resilient, multi-tiered enterprise architecture tailored for a heavy manufacturing environment:
 
 * Three-Tier Hierarchical Model: Core, Distribution, and Access layer separation to isolate high-speed switching from local endpoint policy enforcement.
-* Industrial Redundancy (HA): Dual-homed connections, EtherChannel link aggregation, and Gateway Redundancy (HSRP/VRRP) to ensure zero single points of failure on the production floor.
+* Industrial Redundancy (HA): Dual-homed connections, EtherChannel link aggregation, and Gateway Redundancy (in Active/Active configuration) to ensure zero single points of failure on the production floor.
 * VLAN Segmentation: Strict logical isolation between corporate administrative traffic, engineering services, and IoT/machine-level networks to improve security and limit broadcast domains.
 * Secure Boundary Control: Demilitarized Zones (DMZs) and access control lists (ACLs) managing traffic between external vendor diagnostic loops and internal operational technology (OT) zones.
 
@@ -27,7 +27,7 @@ The design models a highly resilient, multi-tiered enterprise architecture tailo
 
 ```text
 ├── Documentation/
-│   ├── Missions.pdf   # My missions during the internship design doc
+│   ├── Missions.pdf                        # My missions during the internship design doc
 │   └── Internship_Technical_Report.pdf     # Summary of objectives, methodologies & findings
 ├── Network Topology/
 │   ├── sebn_main_plant_topology.pkt        # Packet Tracer master project files
