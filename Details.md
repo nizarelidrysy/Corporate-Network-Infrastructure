@@ -1,0 +1,52 @@
+# XPERT Dashboard Data Infrastructure
+
+This document provides a simple overview of the MySQL database structure, how the tables are connected, and how Power BI connects to the data source.
+
+---
+
+## 1. Database & Table Overview
+
+The database (`xpert_dashboard`) is built around 4 main tables:
+
+* **users_management**
+  Manages user information, including full names, company details, departments, plants, regular menus, and Green Screen (GS) menus.
+
+* **access_management**
+  Tracks access permissions for XPERT users, specifically regarding warehouse access and key authorizations.
+
+* **keys**
+  Contains the specific key assignments for each account.
+
+* **warehouses**
+  Contains the list of accessible warehouses assigned to each account.
+
+---
+
+## 2. Relationships & Model Logic
+
+All four tables are connected using the **ACCOUNT** column as the primary identifier:
+
+* The **ACCOUNT** column links `users_management` directly to `access_management`, `keys`, and `warehouses`.
+* All dashboard graphs, filters, and slicers in Power BI rely on the **ACCOUNT** column to seamlessly filter user details, assigned keys, and warehouses.
+
+---
+
+## 3. Power BI Connection Details
+
+Power BI connects directly to the MySQL database using the local MySQL ODBC Driver.
+
+**Connection String:**
+`Driver={MySQL ODBC 9.7 Unicode Driver};Server=localhost;Database=xpert_dashboard;`
+
+**How to Connect in Power BI:**
+1. Click **Get Data** > **ODBC**.
+2. Select **(None)** under Data source name (DSN).
+3. Expand **Advanced options** and paste the connection string above.
+4. Select **Database** on the left menu and sign in using your MySQL credentials.
+
+---
+
+## 4. Maintenance Notes
+
+* Names and plant data are pre-matched before uploading to MySQL to maintain clean, unique account records without duplicates.
+* Click **Refresh** in Power BI at any time to pull updated records directly from MySQL.
